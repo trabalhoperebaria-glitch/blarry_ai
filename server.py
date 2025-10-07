@@ -1,10 +1,10 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import sqlite3, random, re
 from colorama import Fore, init
 
 init(autoreset=True)
-app = Flask(__name__, static_folder="static")
+app = Flask(__name__, static_folder="static", template_folder="templates")
 CORS(app)
 DB_PATH = "blarry.db"
 conversations = {}
@@ -73,7 +73,8 @@ def message():
     return jsonify({'reply':reply})
 
 @app.route('/')
-def home(): return send_from_directory('static','index.html')
+def index():
+    return render_template("index.html")
 
 if __name__=="__main__":
     print(Fore.YELLOW+"Servidor Blarry AI iniciado em http://0.0.0.0:5000")
