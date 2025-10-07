@@ -2,3 +2,7 @@ Flask==3.1.2
 Flask-Cors==6.0.1
 colorama==0.4.6
 gunicorn==21.2.0
+<<<<<<< HEAD
+=======
+
+>>>>>>> a8946d0c566ba8bdcdbf99cc5682f188d1de4992
